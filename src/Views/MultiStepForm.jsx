@@ -463,18 +463,6 @@ function MultiStepForm(props) {
             />
           )}
         </Form>
-        {/* Load Touchpoints feedback form */}
-        {step === 6 && lang === "en" && (
-          <>
-            <div id="touchpoints-form-embed"></div>
-            <Helmet>
-              <script
-                src="https://touchpoints.app.cloud.gov/touchpoints/4da46508.js"
-                async
-              ></script>
-            </Helmet>
-          </>
-        )}
       </div>
     </>
   );

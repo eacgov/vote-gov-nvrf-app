@@ -1,0 +1,33 @@
+name: vote-gov-nvrf-app
+type: generic
+docroot: .
+php_version: "8.4"
+webserver_type: nginx-fpm
+router_http_port: "8080"
+router_https_port: "8443"
+xdebug_enabled: false
+additional_hostnames: []
+additional_fqdns: []
+use_dns_when_possible: true
+timezone: UTC
+web_environment: []
+nodejs_version: "22"
+
+# Optional: mount for vite dev server to be accessible on host
+# and to avoid issues with HMR (Hot Module Reload)
+# You may need to expose ports if using vite dev server directly
+# via ddev commands or a custom command
+
+hooks:
+  post-start:
+    - exec: "npm install"
+
+# optional: define a custom vite command
+# this command runs vite dev server from within the container
+# `ddev vite` will execute this
+# create `.ddev/commands/web/vite` and add:
+# ---
+# #!/bin/bash
+# npm run dev
+# ---
+# make it executable: chmod +x .ddev/commands/web/vite

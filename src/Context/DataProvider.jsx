@@ -70,16 +70,6 @@ const DataProvider = ({ children }) => {
             Try loading the tool again
           </button>
         </p>
-        <p>
-          If you were unable to use our form filler tool,{" "}
-          <a
-            href="https://touchpoints.app.cloud.gov/touchpoints/c169d3b2/submit"
-            target="_blank"
-          >
-            submit feedback
-          </a>
-          .
-        </p>
       </div>
     );
   }
