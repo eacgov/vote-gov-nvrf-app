@@ -11,11 +11,6 @@ export default defineConfig(({ mode }) => {
     base: "./",
     server: {
       proxy: {
-        "/api": {
-          target: "https://vote-gov-acquia.ddev.site",
-          changeOrigin: true,
-          secure: false,
-        },
         "/nvrf": {
           target: "https://vote-gov-acquia.ddev.site",
           changeOrigin: true,
