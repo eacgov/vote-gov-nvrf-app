@@ -1,6 +1,15 @@
 import { useQuery } from "@tanstack/react-query";
 
-const BASE_URL = "https://vote.gov";
+const PROD = "https://vote.gov";
+const hostname = typeof window !== "undefined" ? window.location.hostname : "";
+const isDevHost =
+  hostname === "localhost" ||
+  hostname.endsWith(".ddev.site") ||
+  hostname.endsWith(".acquia-sites.com") ||
+  hostname === "dev.vote.gov" ||
+  hostname === "stage.vote.gov";
+
+const BASE_URL = isDevHost ? window.location.origin : PROD
 
 export function useFetchData(url, uuid, first = false) {
   const { data, isError, isLoading } = useQuery({
