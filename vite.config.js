@@ -19,6 +19,7 @@ export default defineConfig(({ mode }) => {
       },
     },
     build: {
+      minify: false,
       rollupOptions: {
         input: {
           index: resolve(__dirname, "index.html"),
